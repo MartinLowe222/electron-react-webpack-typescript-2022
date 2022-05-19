@@ -1,7 +1,9 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import WindowFrame from '@misc/window/components/WindowFrame';
-import Application from './components/Application';
+import React from "react"
+import { createRoot } from "react-dom/client"
+
+import WindowFrame from "@misc/window/components/WindowFrame"
+
+import Application from "../main/components/Application"
 
 // Say something
 console.log('[ERWT] : Renderer execution started');
