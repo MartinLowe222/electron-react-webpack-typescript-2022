@@ -52,8 +52,7 @@ Yes!, this project now includes [Electron Window](https://github.com/guasam/elec
 
 <br><br>
 
-Installation
-=============
+# Installation
 
 ![status](https://img.shields.io/badge/ERWT-Main%20Version-blue.svg)
 
@@ -157,3 +156,5 @@ tools/forge/forge.config.js
 ```
 
 For further information, you can visit [Electron Forge Configuration](https://www.electronforge.io/configuration)
+
+https://dev.to/okeeffed/bundling-typescript-react-electron-apps-with-parcel-4af2
