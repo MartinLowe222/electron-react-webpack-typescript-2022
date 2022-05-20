@@ -1,5 +1,6 @@
 import { app, BrowserWindow } from 'electron';
 import path from 'path';
+
 import { registerTitlebarIpc } from '@misc/window/titlebarIPC';
 
 // Electron Forge automatically creates these entry points
@@ -17,12 +18,12 @@ export function createAppWindow(): BrowserWindow {
   appWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    backgroundColor: '#1f252c',
+    backgroundColor: 'blue',
     show: false,
     autoHideMenuBar: true,
     frame: false,
     titleBarStyle: 'hidden',
-    icon: path.resolve('assets/images/appIcon.ico'),
+    icon: path.resolve('assets/images/logo.png'),
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,

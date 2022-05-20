@@ -1,4 +1,4 @@
-import { app, BrowserWindow, dialog } from "electron"
+import { app, BrowserWindow } from "electron"
 
 import { createAppWindow } from "./appWindow"
 

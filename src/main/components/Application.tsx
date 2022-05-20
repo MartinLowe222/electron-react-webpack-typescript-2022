@@ -1,17 +1,15 @@
-import "./Application.scss"
+import './Application.scss';
 
-import { dialog } from "electron"
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from 'react';
 
-import darkModeIcon from "@assets/images/darkmode.png"
-import lightModeIcon from "@assets/images/lightmode.png"
-import logo from "@assets/images/logo.png"
+import darkModeIcon from '@assets/images/darkmode.png';
+import lightModeIcon from '@assets/images/lightmode.png';
+import logo from '@assets/images/logo.png';
 
 const Application: React.FC = () => {
   const [counter, setCounter] = useState(0);
   const [darkTheme, setDarkTheme] = useState(true);
   const [versions, setVersions] = useState<Record<string, string>>({});
-  const { dialog } = require('electron');
 
   /**
    * On component mount
@@ -57,10 +55,6 @@ const Application: React.FC = () => {
       <div className='header'>
         <div className='main-heading'>
           <h1 className='themed'>Aardy Admin Tools</h1>
-        </div>
-        <div className='main-teaser'>
-          <img src={logo} title='Codesbiome' />
-          <div>Welcome to the admin tools page </div>
         </div>
       </div>
 
