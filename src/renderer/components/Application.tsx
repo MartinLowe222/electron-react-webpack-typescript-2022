@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import logo from '@assets/images/logo.png';
-import darkModeIcon from '@assets/images/darkmode.png';
-import lightModeIcon from '@assets/images/lightmode.png';
-import './Application.scss';
+import "./Application.scss"
+
+import React, { useEffect, useState } from "react"
+
+import darkModeIcon from "@assets/images/darkmode.png"
+import lightModeIcon from "@assets/images/lightmode.png"
+import logo from "@assets/images/logo.png"
 
 const Application: React.FC = () => {
   const [counter, setCounter] = useState(0);
@@ -60,34 +62,8 @@ const Application: React.FC = () => {
             Minimal boilerplate for rapid development of Desktop Applications
             using Electron, React, Typescript and Webpack. For faster
             development experience, this application will update using Hot
-            Reload without needing to restart.
+            Reload without needing to restart!!!!!.
           </div>
-        </div>
-        <div className='versions'>
-          <span>
-            ERWT <span>{versions.erwt}</span>
-          </span>
-          <span>
-            Electron <span>{versions.electron}</span>
-          </span>
-          <span>
-            Chrome <span>{versions.chrome}</span>
-          </span>
-          <span>
-            Node <span>{versions.node}</span>
-          </span>
-          <span>
-            React <span>{versions.react}</span>
-          </span>
-          <span>
-            Webpack <span>{versions.webpack}</span>
-          </span>
-          <span>
-            Typescript <span>{versions.typescript}</span>
-          </span>
-          <span>
-            License <span>{versions.license}</span>
-          </span>
         </div>
       </div>
 
