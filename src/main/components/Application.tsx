@@ -1,13 +1,26 @@
 import "./Application.scss"
 
 import React, { useEffect, useState } from "react"
+import { HashRouter, Link, Route, Routes } from "react-router-dom"
 
 import darkModeIcon from "@assets/images/darkmode.png"
 import lightModeIcon from "@assets/images/lightmode.png"
 import logo from "@assets/images/logo.png"
 import { DirectionalHint, TeachingBubble } from "@fluentui/react/lib"
 
-const Application: React.FC = () => {
+const Stand = () => {
+  return <h1>Stand</h1>;
+};
+
+const Sit = () => {
+  return <h1>Sit</h1>;
+};
+
+const Home = () => {
+  return <h1>HOME!</h1>;
+};
+
+const Application: React.FC = (props) => {
   const [showBubble, setShowBubble] = useState(false);
   const [counter, setCounter] = useState(0);
   const [darkTheme, setDarkTheme] = useState(true);
@@ -26,9 +39,6 @@ const Application: React.FC = () => {
       setDarkTheme(false);
     }
 
-    // buuble
-    const id = setTimeout(() => setShowBubble(true), 3000);
-    return () => clearTimeout(id);
     // Apply verisons
     const app = document.getElementById('app');
     const versions = JSON.parse(app.getAttribute('data-versions'));
@@ -56,69 +66,26 @@ const Application: React.FC = () => {
   }
 
   return (
-    <div id='erwt'>
-      <div className='header'>
-        <div className='main-heading'>
-          <h1 className='themed'>Aardy Admin Tools</h1>
+    <HashRouter>
+      <div className='App'>
+        <div className='menu'>
+          <Link to='/'>
+            <h2>Home</h2>
+          </Link>
+          <Link to='/one'>
+            <h2>Stand</h2>
+          </Link>
+          <Link to='/two'>
+            <h2>Sit</h2>
+          </Link>
         </div>
-        {/*
-        {showBubble && (
-            <TeachingBubble
-              calloutProps={{ directionalHint: DirectionalHint.bottomCenter }}
-              target='#targetButton'
-              isWide={true}
-              hasCloseButton={true}
-              onDismiss={() => setShowBubble(false)}
-              headline='Please read'
-            >
-              Hello
-            </TeachingBubble>
-          
-        )}
-        */}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/one' element={<Stand />} />
+          <Route path='/two' element={<Sit />} />
+        </Routes>
       </div>
-
-      {/*<div className='footer'>
-        <div className='center'>
-          <button
-            id='targetButton'
-            onClick={() => {
-              if (counter > 99) return alert('Going too high!!');
-              setCounter(counter + 1);
-            }}
-          >
-            Increment <span>{counter}</span>
-          </button>
-          &nbsp;&nbsp; &nbsp;&nbsp;
-          <button
-            onClick={() => {
-              'goToSettingsWindow()';
-            }}
-          >
-            Go to Settings Window
-          </button>
-          &nbsp;&nbsp; &nbsp;&nbsp;
-          <button onClick={toggleTheme}>
-            {darkTheme ? 'Light Mode' : 'Dark Mode'}
-            <span>
-              <img
-                className='rotate'
-                src={darkTheme ? lightModeIcon : darkModeIcon}
-              />
-            </span>
-          </button>
-          &nbsp;&nbsp; &nbsp;&nbsp;
-          <button
-            onClick={() => {
-              alert('carriers turned off');
-            }}
-          >
-            Insurance Carriers off
-          </button>
-        </div>
-      </div>
-         */}
-    </div>
+    </HashRouter>
   );
 };
 
