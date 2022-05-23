@@ -78,6 +78,7 @@
   },
   "dependencies": {
     "@aardy/vark": "^2.6.1",
+    "@fluentui/react": "^8.68.3",
     "bootstrap": "^5.1.3",
     "electron-squirrel-startup": "^1.0.0",
     "react": "^18.0.0",

@@ -1,12 +1,14 @@
-import './Application.scss';
+import "./Application.scss"
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react"
 
-import darkModeIcon from '@assets/images/darkmode.png';
-import lightModeIcon from '@assets/images/lightmode.png';
-import logo from '@assets/images/logo.png';
+import darkModeIcon from "@assets/images/darkmode.png"
+import lightModeIcon from "@assets/images/lightmode.png"
+import logo from "@assets/images/logo.png"
+import { DirectionalHint, TeachingBubble } from "@fluentui/react/lib"
 
 const Application: React.FC = () => {
+  const [showBubble, setShowBubble] = useState(false);
   const [counter, setCounter] = useState(0);
   const [darkTheme, setDarkTheme] = useState(true);
   const [versions, setVersions] = useState<Record<string, string>>({});
@@ -24,6 +26,9 @@ const Application: React.FC = () => {
       setDarkTheme(false);
     }
 
+    // buuble
+    const id = setTimeout(() => setShowBubble(true), 3000);
+    return () => clearTimeout(id);
     // Apply verisons
     const app = document.getElementById('app');
     const versions = JSON.parse(app.getAttribute('data-versions'));
@@ -56,11 +61,27 @@ const Application: React.FC = () => {
         <div className='main-heading'>
           <h1 className='themed'>Aardy Admin Tools</h1>
         </div>
+        {/*
+        {showBubble && (
+            <TeachingBubble
+              calloutProps={{ directionalHint: DirectionalHint.bottomCenter }}
+              target='#targetButton'
+              isWide={true}
+              hasCloseButton={true}
+              onDismiss={() => setShowBubble(false)}
+              headline='Please read'
+            >
+              Hello
+            </TeachingBubble>
+          
+        )}
+        */}
       </div>
 
-      <div className='footer'>
+      {/*<div className='footer'>
         <div className='center'>
           <button
+            id='targetButton'
             onClick={() => {
               if (counter > 99) return alert('Going too high!!');
               setCounter(counter + 1);
@@ -71,11 +92,10 @@ const Application: React.FC = () => {
           &nbsp;&nbsp; &nbsp;&nbsp;
           <button
             onClick={() => {
-              if (counter == 0) return alert('Oops.. thats not possible!');
-              setCounter(counter > 0 ? counter - 1 : 0);
+              'goToSettingsWindow()';
             }}
           >
-            Decrement <span>{counter}</span>
+            Go to Settings Window
           </button>
           &nbsp;&nbsp; &nbsp;&nbsp;
           <button onClick={toggleTheme}>
@@ -87,8 +107,17 @@ const Application: React.FC = () => {
               />
             </span>
           </button>
+          &nbsp;&nbsp; &nbsp;&nbsp;
+          <button
+            onClick={() => {
+              alert('carriers turned off');
+            }}
+          >
+            Insurance Carriers off
+          </button>
         </div>
       </div>
+         */}
     </div>
   );
 };
