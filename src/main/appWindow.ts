@@ -1,4 +1,5 @@
 import { app, BrowserWindow } from "electron"
+import { url } from "inspector"
 import path from "path"
 
 import { registerTitlebarIpc } from "@misc/window/titlebarIPC"
@@ -18,7 +19,7 @@ export function createAppWindow(): BrowserWindow {
   appWindow = new BrowserWindow({
     width: 800,
     height: 600,
-    backgroundColor: 'blue',
+    //background: url('../../assets/images/island-lg.jpg'),
     show: false,
     autoHideMenuBar: true,
     frame: false,

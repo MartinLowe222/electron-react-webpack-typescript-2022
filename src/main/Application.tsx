@@ -6,22 +6,12 @@ import { HashRouter, Link, Route, Routes } from "react-router-dom"
 import darkModeIcon from "@assets/images/darkmode.png"
 import lightModeIcon from "@assets/images/lightmode.png"
 import logo from "@assets/images/logo.png"
-import { DirectionalHint, TeachingBubble } from "@fluentui/react/lib"
 
-const Stand = () => {
-  return <h1>Stand</h1>;
-};
-
-const Sit = () => {
-  return <h1>Sit</h1>;
-};
-
-const Home = () => {
-  return <h1>HOME!</h1>;
-};
+import Home from "../main/components/Home"
+import PageOne from "../main/components/PageOne"
+import PageTwo from "../main/components/PageTwo"
 
 const Application: React.FC = (props) => {
-  const [showBubble, setShowBubble] = useState(false);
   const [counter, setCounter] = useState(0);
   const [darkTheme, setDarkTheme] = useState(true);
   const [versions, setVersions] = useState<Record<string, string>>({});
@@ -66,26 +56,33 @@ const Application: React.FC = (props) => {
   }
 
   return (
-    <HashRouter>
-      <div className='App'>
-        <div className='menu'>
-          <Link to='/'>
-            <h2>Home</h2>
-          </Link>
-          <Link to='/one'>
-            <h2>Stand</h2>
-          </Link>
-          <Link to='/two'>
-            <h2>Sit</h2>
-          </Link>
+    <>
+      <footer>
+        <div className='center'>
+          <HashRouter>
+            <div className='App'>
+              <div className='menu'>
+                <Link to='/'>
+                  <h2>Home</h2>
+                </Link>
+                <Link to='/one'>
+                  <h2>Page One</h2>
+                </Link>
+                <Link to='/two'>
+                  <h2>Page Two</h2>
+                </Link>
+              </div>
+
+              <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/one' element={<PageOne />} />
+                <Route path='/two' element={<PageTwo />} />
+              </Routes>
+            </div>
+          </HashRouter>
         </div>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/one' element={<Stand />} />
-          <Route path='/two' element={<Sit />} />
-        </Routes>
-      </div>
-    </HashRouter>
+      </footer>
+    </>
   );
 };
 
