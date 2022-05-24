@@ -4,7 +4,7 @@ export const Wrapper = styled.section`
   .page {
     background: #ffff;
     border: 5px solid darkblue;
-    height: 150px;
+    height: 400px;
     width: 200px;
     overflow: scroll;
   }

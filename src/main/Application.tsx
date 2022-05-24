@@ -3,11 +3,8 @@ import "./Application.scss"
 import React, { useEffect, useState } from "react"
 import { HashRouter, Link, Route, Routes } from "react-router-dom"
 
-import darkModeIcon from "@assets/images/darkmode.png"
-import lightModeIcon from "@assets/images/lightmode.png"
-import logo from "@assets/images/logo.png"
-
 import Home from "../main/components/Home"
+import NavBar from "../main/components/NavBar"
 import PageOne from "../main/components/PageOne"
 import PageTwo from "../main/components/PageTwo"
 
@@ -58,29 +55,19 @@ const Application: React.FC = (props) => {
   return (
     <>
       <footer>
-        <div className='center'>
-          <HashRouter>
-            <div className='App'>
-              <div className='menu'>
-                <Link to='/'>
-                  <h2>Home</h2>
-                </Link>
-                <Link to='/one'>
-                  <h2>Page One</h2>
-                </Link>
-                <Link to='/two'>
-                  <h2>Page Two</h2>
-                </Link>
-              </div>
-
-              <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/one' element={<PageOne />} />
-                <Route path='/two' element={<PageTwo />} />
-              </Routes>
+        <HashRouter>
+          <div className='App'>
+            <div className='menu'>
+              <NavBar />
             </div>
-          </HashRouter>
-        </div>
+
+            <Routes>
+              <Route path='/one' element={<PageOne />} />
+              <Route path='/two' element={<PageTwo />} />
+              <Route path='/' element={<Home />} />
+            </Routes>
+          </div>
+        </HashRouter>
       </footer>
     </>
   );
