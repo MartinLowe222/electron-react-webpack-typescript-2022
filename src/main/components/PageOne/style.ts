@@ -4,7 +4,9 @@ export const Wrapper = styled.section`
   .page {
     background: #ffff;
     border: 5px solid darkblue;
-    height: 300px;
-    width: 400px;
+    border-radius: 9px;
+    height: 400px;
+    width: 600px;
+    padding: 10px;
   }
 `;

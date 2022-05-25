@@ -19,7 +19,9 @@ const PageTwo = () => {
   return (
     <Wrapper>
       <div className='page'>
-        <div className='header'>I'm page two header</div>
+        <div className='header'>
+          <h4>I'm page two header</h4>
+        </div>
         <div className='content'>I'm page two content</div>
         {posts.map((post) => (
           <>

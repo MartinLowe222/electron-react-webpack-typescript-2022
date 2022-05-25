@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Button, Modal } from "react-bootstrap"
 
+import Form from "../Form"
 import { Wrapper } from "./style"
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
           <h4>Welcome to AARDY Admin home </h4>
         </div>
         <div className='content'>I'm home content</div>
+        <Form />
       </div>
     </Wrapper>
   );

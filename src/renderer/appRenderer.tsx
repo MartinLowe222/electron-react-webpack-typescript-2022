@@ -4,7 +4,6 @@ import { createRoot } from "react-dom/client"
 import WindowFrame from "@misc/window/components/WindowFrame"
 
 import Application from "../main/Application"
-import Settings from "../main/components/Settings"
 
 // Say something
 console.log('[ERWT] : Renderer execution started');
