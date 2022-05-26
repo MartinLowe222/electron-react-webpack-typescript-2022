@@ -1,23 +1,3 @@
-import styled from "styled-components"
+import styled from "@emotion/styled"
 
-export const Wrapper = styled.section`
-  .navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: #6ac14b;
-  }
-
-  .nav-links {
-    width: 40%;
-    display: flex;
-    justify-content: space-around;
-    list-style: none;
-  }
-
-  .navbar .nav-links > a {
-    color: #fff;
-    text-decoration: none;
-  }
-`;
+export const Wrapper = styled.section``;

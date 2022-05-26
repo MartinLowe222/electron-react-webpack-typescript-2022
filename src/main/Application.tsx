@@ -1,7 +1,7 @@
-import "./Application.scss"
-
 import React, { useEffect, useState } from "react"
 import { HashRouter, Link, Route, Routes } from "react-router-dom"
+
+import { Box, Img } from "@chakra-ui/react"
 
 import Home from "../main/components/Home"
 import NavBar from "../main/components/NavBar"
@@ -54,21 +54,13 @@ const Application: React.FC = (props) => {
 
   return (
     <>
-      <footer>
-        <HashRouter>
-          <div className='App'>
-            <div className='menu'>
-              <NavBar />
-            </div>
-
-            <Routes>
-              <Route path='/one' element={<PageOne />} />
-              <Route path='/two' element={<PageTwo />} />
-              <Route path='/' element={<Home />} />
-            </Routes>
-          </div>
-        </HashRouter>
-      </footer>
+      <HashRouter>
+        <Routes>
+          <Route path='/one' element={<PageOne />} />
+          <Route path='/two' element={<PageTwo />} />
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </HashRouter>
     </>
   );
 };

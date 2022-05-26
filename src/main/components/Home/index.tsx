@@ -1,19 +1,23 @@
 import React, { useState } from "react"
-import { Button, Modal } from "react-bootstrap"
 
-import Form from "../Form"
+import { Box, Heading, Text, VStack } from "@chakra-ui/react"
+
+import Layout from "../Layout"
 import { Wrapper } from "./style"
 
 const Home = () => {
   return (
     <Wrapper>
-      <div className='page'>
-        <div className='header'>
-          <h4>Welcome to AARDY Admin home </h4>
-        </div>
-        <div className='content'>I'm home content</div>
-        <Form />
-      </div>
+      <Layout>
+        <Box minHeight='100vh'>
+          <Heading as='h3' size='lg' p={5} m={-1}>
+            Welcome to AARDY Admin home
+          </Heading>
+          <Box p={2} m={2}>
+            <Text>Welcome to aardy admin home window</Text>
+          </Box>
+        </Box>
+      </Layout>
     </Wrapper>
   );
 };

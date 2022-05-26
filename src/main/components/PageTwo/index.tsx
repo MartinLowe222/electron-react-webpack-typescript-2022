@@ -1,6 +1,9 @@
 import axios from "axios"
 import React, { useEffect, useState } from "react"
 
+import { Box, Heading } from "@chakra-ui/react"
+
+import Layout from "../Layout"
 import { Wrapper } from "./style"
 
 const API_URL = 'https://jsonplaceholder.typicode.com/posts';
@@ -18,18 +21,22 @@ const PageTwo = () => {
   }, []);
   return (
     <Wrapper>
-      <div className='page'>
-        <div className='header'>
+      <Layout>
+        <Heading p={5} m={-1}>
           <h4>I'm page two header</h4>
-        </div>
-        <div className='content'>I'm page two content</div>
-        {posts.map((post) => (
-          <>
-            <p>{post.tile}</p>
-            <p>{post.body}</p>
-          </>
-        ))}
-      </div>
+        </Heading>
+
+        <Box p={2} m={2}>
+          {posts.map((post) => (
+            <>
+              <Box p={2} m={2}>
+                <p>{post.tile}</p>
+                <p>{post.body}</p>
+              </Box>
+            </>
+          ))}
+        </Box>
+      </Layout>
     </Wrapper>
   );
 };
