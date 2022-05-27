@@ -7,9 +7,9 @@ import NavBar from "../NavBar"
 const Layout = ({ children }) => {
   return (
     <>
-      <Box border='8px solid cornsilk'>
+      <Box>
         <NavBar />
-        <Box as='main' bg='darkcyan'>
+        <Box as='main' bg=''>
           {children}
         </Box>
       </Box>

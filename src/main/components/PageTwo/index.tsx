@@ -22,8 +22,8 @@ const PageTwo = () => {
   return (
     <Wrapper>
       <Layout>
-        <Heading p={5} m={-1}>
-          <h4>I'm page two header</h4>
+        <Heading as='h5' size='lg' p={5} m={0}>
+          Welcome to Page two
         </Heading>
 
         <Box p={2} m={2}>
