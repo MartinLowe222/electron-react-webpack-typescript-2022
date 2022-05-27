@@ -9,9 +9,7 @@ const Layout = ({ children }) => {
     <>
       <Box>
         <NavBar />
-        <Box as='main' bg=''>
-          {children}
-        </Box>
+        <Box as='main'>{children}</Box>
       </Box>
     </>
   );
